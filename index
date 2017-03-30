@@ -1,0 +1,3 @@
+DT = DataType ( Multivariate, Multivariate-datagenerator, Multivariate-spatial, image, relational, sequential,sequential-domain theory,transactional-sequential, univariate-text/timeseries )
+deft = Default task (classification, regression, relational learning, recommender-systems, clustering etc)
+atttyp = attribute type (categorical, categorical-integer, integer, etc)
