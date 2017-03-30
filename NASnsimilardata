@@ -1,0 +1,46 @@
+
+
+Each NAS has its own local storage for Sync's files (.sync folder with database, settings, logs, etc). You may find the sync.log files in the following directories depending on the NAS. If the mentioned path does not contain sync.log, you may see the local storage in a config file (sync.conf) and check that storage for logs.
+
+You can use any tool to get the logs or use our instruction.
+
+On Synology NAS .sync folder and sync.log are located at:
+/usr/local/resiliosync/var/
+
+
+For Netgear ReadyNAS, the .sync folder is located at:
+/apps/resilio-sync/config
+If you do not find sync.log here, you may see the local storage in sync.conf file which should also be located in the current folder at:
+/apps/resilio-sync/config
+
+
+For QNAP, the .sync folder and sync.conf are located on whatever volume the user choses to install the application. The most probable location would be:
+/share/HDA_DATA/.qpkg/ResilioSync/storage where instead of MD0_DATA, it may be HDA_DATA, HDB_DATA, ...
+
+
+For Seagate, things are a bit more complicated. Seagate's package format is more like an LXC/Docker container, the .sync folder usually appears at:
+/media/internal_1/rainbow/resilio-sync-xxxxxxxx.data/.sync
+The config file (config.json) is located at:
+/media/internal_1/rainbow/resilio-sync-xxxxxxxx/opt/resilio-sync/config.json
+Note that "xxxxxxx" after "resilio-sync-" stand for the container ID which is generated randomly, so it'll be different on each NAS.
+Also, instead of 'internal_1" you may have "internal_2", etc. based on naming convention.
+
+
+For Overland Storage the .sync folder is located at:
+/hd/vol_mntX/btsync (where "X" is some number, most likely 0).
+Config file sync.conf is located at:
+/apps/BitTorrent/btsync/btsync.conf
+
+For Drobo, sync storage folder is located at:
+/mnt/DroboFS/Shares/DroboApps/BitTorrent_Sync/data
+
+On the different Western Digital NAS allowing third party application (WD MyCloud EX2, WD MYCloud EX4, WD MyCloud EX2100, WD MyCloud 4100,...) Resilio Sync will install itself on an available drive.
+The path of the directory including sync.log would likely be:
+/mnt/HD/HD_a2/Nas_Prog/ResilioSync/settings/
+On the AsuStor, Resilio Sync will install itself on an available drive. The path of the directory including sync.log would likely be:
+
+/volume1/.@plugins/AppCentral/resilio-sync/app/.sync/
+
+For SnapServer (Overland), the path of the directory including sync.log would likely be:
+/hd/vol_mnt0/btsync
+
